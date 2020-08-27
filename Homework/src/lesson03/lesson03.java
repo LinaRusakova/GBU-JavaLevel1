@@ -8,7 +8,7 @@ package lesson03;
 public class lesson03 {
     public static void main(String[] args) {
         // Task1
-//task1.task();
+task1.task();
         //task2
         task2.task();
     }
