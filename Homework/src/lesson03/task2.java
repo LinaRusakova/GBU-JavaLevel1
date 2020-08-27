@@ -28,7 +28,7 @@ public class task2 {
 
         Random randomWord = new Random();
         String smartWord = words[randomWord.nextInt(words.length)];
-        System.out.println(smartWord);
+//        System.out.println(smartWord);
         readConsole(smartWord);
     }
 
