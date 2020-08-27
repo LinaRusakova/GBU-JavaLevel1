@@ -1,8 +1,9 @@
 package lesson03;
 /*
  * Task 1.
- * Задать пустой целочисленный массив размером 8.
- * С помощью цикла заполнить его значениями 0 3 6 9 12 15 18 21;
+ * Написать программу, которая загадывает случайное число от 0 до 9, и пользователю дается 3 попытки угадать это число.
+ * При каждой попытке компьютер должен сообщить больше ли указанное пользователем число чем загаданное, или меньше.
+ * После победы или проигрыша выводится запрос – «Повторить игру еще раз? 1 – да / 0 – нет»(1 – повторить, 0 – нет;
  * */
 
 
@@ -10,63 +11,87 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class task1 {
+    static Scanner scanner = new Scanner(System.in);
+    static int answersCount = 2; // задаем значение (N-1) количества попыток угадать число
+    static boolean restartGame; //задаем значение переменной, "разрешающей" продолжить игру (по-умолчанию, разрешено)
 
     public static void task() {
+
         String taskNumber = "Задание 1";
         String textTask = "Написать программу, которая загадывает случайное число от 0 до 9, и пользователю дается 3 попытки угадать это число. \n" +
                 "При каждой попытке компьютер должен сообщить больше ли указанное пользователем число чем загаданное, или меньше.\n" +
                 "После победы или проигрыша выводится запрос – «Повторить игру еще раз? 1 – да / 0 – нет»(1 – повторить, 0 – нет).";
         System.out.printf("%s%n%s%n%n", taskNumber, textTask);
 
-        randomNumber();
 
+        restartGame = true;
+        while (restartGame) {
+            playLevel(9);
+            reStartGame();
+        }
+        System.out.println("Игра завершена!");
     }
 
-    private static void randomNumber() {
-        String textTask = "Угадайте случайное число от 0 до 9.\nВам дается 3 попытки угадать это число. \n";
-        String pleaseInput = "Пожалуйста, введите ваш вариант:";
-        System.out.printf("%s%n%s%n", textTask, pleaseInput);
+    private static void playLevel(int range) {
         Random random = new Random();
-        int randomNumber = random.nextInt(9);
-        readConsole(randomNumber);
+        int number = random.nextInt(9);
 
-    }
-
-    public static void readConsole(int randomNumber) {
-        Scanner userAnswer = new Scanner(System.in);
-        int counter = 3;
+        //int number=(int)(Math.random()*range); // загадываем искомое число
+        System.out.println("Угадайте число от 0 до " + range + ". У вас на это " + (answersCount + 1) + " попытки");
         while (true) {
-            System.out.println("Введите число от 0 до 9: ");
-
-            if (!userAnswer.hasNextInt()) {
-                System.out.println("Было введено нечисловое значение!");
-                userAnswer.nextLine();
-                continue;
-            }
-
-            int number = userAnswer.nextInt();
-
-            if ((number >= 0 && number <= 9) && number == randomNumber) {
-                System.out.println("Вы угадали загаданное число  " + number);
+            if (answersCount < 0) { //Если попытки кончились выходим из цикла
+                System.out.println("Вы проиграли\n Играем уровень заново?");
                 break;
+            }
+            int input_number = scanner.nextInt();
+            if (input_number == number) {
+                System.out.println("Вы угадали");
+                answersCount = 3; //сбрасываем количество сделанных игроком попыток
+                break;
+            } else if (input_number > number) {
+                System.out.println("Загаданное число меньше");
+                System.out.println("Для ответа осталось попыток: " + answersCount + ".");
+                answersCount--;
             } else {
-                System.out.println("Было загадано другое число.");
-                if (number > randomNumber) {
-                    System.out.println("Введенное вами число больше загаданного числа");
-                } else {
-                    System.out.println("Введенное вами число меньше загаданного числа.");
-                }
-                counter--;
-                if (counter > 0) {
-                    System.out.println("Попробуйте еще раз.");
-                }
-                System.out.println("У вас осталось " + counter + " попыток.");
-                if (counter == 0) {
-                    System.out.println("Вы проиграли! \nИгра окончена.");
-                    break;
-                }
+                System.out.println("Загаданное число больше");
+                System.out.println("Для ответа осталось попыток: " + answersCount + ".");
+                answersCount--;
             }
         }
 
     }
+
+    private static void reStartGame() {
+        String scannerText;
+        if (restartGame) {
+            System.out.println("Введите \"1\", если хотите продолжить игру. \"0\" - чтобы завершить игру.");
+            boolean answer=true;
+            while (answer) {
+                scannerText = scanner.next();
+                if (scannerText.equals("1")) {
+                    System.out.println("продолжаем...");
+                    answersCount = 2;
+                    answer=false;
+                } else if (scannerText.equals("0")) {
+                    restartGame = false; //scanner.close();
+                    answer=false;
+                } else {continue;}
+            }
+        }
+    }
 }
+//    Вариант с вопросом "да"?
+//        private static void reStartGame() {
+//            String scannerText;
+//            if (restartGame) {
+//                System.out.println("Введите \"да\", если хотите продолжить игру.");
+//                scannerText= scanner.next();
+//                if (scannerText.equals("да")) {
+//                    System.out.println("продолжаем..."); answersCount=2;
+//                } else {
+//                    restartGame=false; //scanner.close();
+//                }
+//            }
+//        }
+//    }
+

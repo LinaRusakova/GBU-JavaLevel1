@@ -38,7 +38,7 @@ public class task2 {
             System.out.println("Введите ваш вариант: ");
 
             if (!userAnswer.hasNextLine()) {
-                System.out.println("Было введено число. Вам необходим ввести слов!");
+                System.out.println("Было введено число. Вам необходим ввести слово!");
                 userAnswer.nextInt();
                 continue;
             }
