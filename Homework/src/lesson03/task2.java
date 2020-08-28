@@ -51,11 +51,7 @@ public class task2 {
                 break;
             } else {
                 System.out.println("Вы ошиблись. Загадано другое слово.");
-                if (randomWord.length()<=inputWord.length()) {
-                   length=randomWord.length();
-                } else  {
-                     length=inputWord.length();
-                }
+               length=Math.min(randomWord.length(), inputWord.length());
                 for (int i = 0; i < length; i++) {
 
                     if (randomWord.charAt(i) == inputWord.charAt(i)) {
@@ -78,4 +74,3 @@ public class task2 {
     }
 
 }
-
