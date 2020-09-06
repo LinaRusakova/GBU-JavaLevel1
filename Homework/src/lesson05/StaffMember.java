@@ -27,17 +27,17 @@ public class StaffMember {
     }
 
     //* Внутри класса «Сотрудник» написать метод, который выводит информацию об объекте в консоль;
-public void printInfoStaffMember() {
-    System.out.printf("Свеедения о сотруднике: \nФИО - %s\nДолжность - %s\nEmail - %s\nPhone - %s\nЗарплата - %.2f Euro\nВозраст - %d\n\n", firstMiddleLastName, position, email, phoneNumber, wage, age);
-}
+    public void printInfoStaffMember() {
+        System.out.printf("Свеедения о сотруднике: \nФИО - %s\nДолжность - %s\nEmail - %s\nPhone - %s\nЗарплата - %.2f Euro\nВозраст - %d\n\n", firstMiddleLastName, position, email, phoneNumber, wage, age);
+    }
 
     public static  void  main(String[] args) {
         StaffMember staffMember=new StaffMember("Иванов Иван Иванович", "Ведущий разработчик", "ivanovii@mail.ru", "+79991234567", 2500, 42 );
         staffMember.printInfoStaffMember();
 //* Создать массив из 5 сотрудников
 //* С помощью цикла вывести информацию только о сотрудниках старше 40 лет;
-       StaffMember[] staffMembers = new StaffMember[5];
-       staffMembers[0] = new StaffMember("Kris Kaspersky", "IT security researcher", "kasperskyk@mailbox.com", "+79991234567", 2500, 40 );
+        StaffMember[] staffMembers = new StaffMember[5];
+        staffMembers[0] = new StaffMember("Kris Kaspersky", "IT security researcher", "kasperskyk@mailbox.com", "+79991234567", 2500, 40 );
         staffMembers[1] = new StaffMember("Steve Wozniak", "Electronics engineer", "wozniaks@mailbox.com", "+79991234567", 3900, 70 );
         staffMembers[2] = new StaffMember("Linus Torwalds", "Developer of the Linux kernel", "torwaldsl@mailbox.com", "+79991234567", 2500, 50 );
         staffMembers[3] = new StaffMember("Kevin Mitnick", "Hacker", "mitnikk@mailbox.com", "+79991234567", 4500, 57 );
@@ -52,4 +52,3 @@ public void printInfoStaffMember() {
     }
 
 }
-
