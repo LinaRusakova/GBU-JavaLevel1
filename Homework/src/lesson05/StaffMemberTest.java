@@ -90,7 +90,7 @@ import java.util.Random;
         public boolean equals(Object obj) {
             if (this == obj) return true;
             if (obj == null || getClass() != obj.getClass()) return false;
-            lesson05.StaffMember staffMember = (lesson05.StaffMember) obj;
+            lesson05.StaffMemberTest staffMember = (lesson05.StaffMemberTest) obj;
             return age == staffMember.age &&
                     wage == staffMember.wage &&
                     Objects.equals(firstMiddleLastName, staffMember.firstMiddleLastName) &&
@@ -99,8 +99,8 @@ import java.util.Random;
                     Objects.equals(position, staffMember.position);
         }
 
-        private lesson05.StaffMember createStaffMember(int i) {
-            return new lesson05.StaffMember(
+        private lesson05.StaffMemberTest createStaffMember(int i) {
+            return new lesson05.StaffMemberTest(
                     "FIO" + i,
                     "superPosition" + i,
                     "email" + i + "@mail.ru",
@@ -111,16 +111,16 @@ import java.util.Random;
         }
 
         public static void main(String[] args) {
-            lesson05.StaffMember staffMember = new lesson05.StaffMember("Иванов Иван Иванович", "Ведущий разработчик", "ivanovii@mail.ru", "+79991234567", 2500, 42);
+            lesson05.StaffMemberTest staffMember = new lesson05.StaffMemberTest("Иванов Иван Иванович", "Ведущий разработчик", "ivanovii@mail.ru", "+79991234567", 2500, 42);
             staffMember.printInfoStaffMember();
 //* Создать массив из 5 сотрудников
 //* С помощью цикла вывести информацию только о сотрудниках старше 40 лет;
-            lesson05.StaffMember[] staffMembers = new lesson05.StaffMember[5];
-            staffMembers[0] = new lesson05.StaffMember("Kris Kaspersky", "IT security researcher", "kasperskyk@mailbox.com", "+79991234567", 2500, 40);
-            staffMembers[1] = new lesson05.StaffMember("Steve Wozniak", "Electronics engineer", "wozniaks@mailbox.com", "+79991234567", 3900, 70);
-            staffMembers[2] = new lesson05.StaffMember("Linus Torwalds", "Developer of the Linux kernel", "torwaldsl@mailbox.com", "+79991234567", 2500, 50);
-            staffMembers[3] = new lesson05.StaffMember("Kevin Mitnick", "Hacker", "mitnikk@mailbox.com", "+79991234567", 4500, 57);
-            staffMembers[4] = new lesson05.StaffMember("Gleb Alexandrov", "Creative/Art Director в Creative Shrimp", "gleba@mailbox.com", "+79991234567", 4900, 36);
+            lesson05.StaffMemberTest[] staffMembers = new lesson05.StaffMemberTest[5];
+            staffMembers[0] = new lesson05.StaffMemberTest("Kris Kaspersky", "IT security researcher", "kasperskyk@mailbox.com", "+79991234567", 2500, 40);
+            staffMembers[1] = new lesson05.StaffMemberTest("Steve Wozniak", "Electronics engineer", "wozniaks@mailbox.com", "+79991234567", 3900, 70);
+            staffMembers[2] = new lesson05.StaffMemberTest("Linus Torwalds", "Developer of the Linux kernel", "torwaldsl@mailbox.com", "+79991234567", 2500, 50);
+            staffMembers[3] = new lesson05.StaffMemberTest("Kevin Mitnick", "Hacker", "mitnikk@mailbox.com", "+79991234567", 4500, 57);
+            staffMembers[4] = new lesson05.StaffMemberTest("Gleb Alexandrov", "Creative/Art Director в Creative Shrimp", "gleba@mailbox.com", "+79991234567", 4900, 36);
 
             for (int i = 0; i < staffMembers.length; i++) {
                 if (staffMembers[i].getAge() > 40) {
@@ -129,7 +129,7 @@ import java.util.Random;
             }
 
 
-            lesson05.StaffMember[] staffMembers2 = new lesson05.StaffMember[STAFF_MEMBER_COUNT];
+            lesson05.StaffMemberTest[] staffMembers2 = new lesson05.StaffMemberTest[STAFF_MEMBER_COUNT];
             for (int i = 0; i < staffMembers2.length; i++) {
                 staffMembers2[i].createStaffMember(i);
             }
