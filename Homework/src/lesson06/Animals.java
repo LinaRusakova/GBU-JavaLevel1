@@ -102,4 +102,19 @@ public void swimAnimals(String typeAnimals, double swim, double MAX_SWIM) {
     public void printInfo() {
         System.out.println("Animal: name " + name + ", age "+ age+".");
     }
+
+    public void run(int run) {
+        runAnimals(this.getTypeAnimals(), run, MAX_RUN);
+    }
+
+    //метод прыжков собаки
+    public void jump(int jump) {
+        jumpAnimals(this.getTypeAnimals(), jump, MAX_JUMP);
+    }
+
+    //метод плавания собаки
+    public void swim(int swim) {
+        swimAnimals(this.getTypeAnimals(), swim, MAX_SWIM);
+    }
+
 }

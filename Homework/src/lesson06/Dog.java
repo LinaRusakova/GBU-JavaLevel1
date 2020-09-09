@@ -38,16 +38,19 @@ public class Dog extends Animals {
     }
 
     //метод бега собаки
+    @Override
     public void run(int run) {
         runAnimals(this.getTypeAnimals(), run, MAX_RUN);
     }
 
     //метод прыжков собаки
+    @Override
     public void jump(int jump) {
         jumpAnimals(this.getTypeAnimals(), jump, MAX_JUMP);
     }
 
     //метод плавания собаки
+    @Override
     public void swim(int swim) {
         swimAnimals(this.getTypeAnimals(), swim, MAX_SWIM);
     }
