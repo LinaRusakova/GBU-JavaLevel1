@@ -95,8 +95,12 @@ public void swimAnimals(String typeAnimals, double swim, double MAX_SWIM) {
 }
     //вывод в консоль для бега/прыжков/плавания
     public void printRunJumpSwim(String typeAnimals, String moveType, double length, double max) {
-        System.out.println(this.getTypeAnimals() + " по кличке \"" + this.getName() +"\"" + moveType + length + " метров.");
-        System.out.println("Определено ограничение: "  + max + " метров.\n");
+        if (max!=0) {
+            System.out.println(this.getTypeAnimals() + " по кличке \"" + this.getName() + "\"" + moveType + length + " метров.");
+            System.out.println("Определено ограничение: " + max + " метров.\n");
+        } else {
+            System.out.println(this.getTypeAnimals() + " по кличке \"" + this.getName() + "\"" + "не умеет плавать.");
+        }
     }
 
     public void printInfo() {
@@ -107,12 +111,12 @@ public void swimAnimals(String typeAnimals, double swim, double MAX_SWIM) {
         runAnimals(this.getTypeAnimals(), run, MAX_RUN);
     }
 
-    //метод прыжков собаки
+
     public void jump(int jump) {
         jumpAnimals(this.getTypeAnimals(), jump, MAX_JUMP);
     }
 
-    //метод плавания собаки
+
     public void swim(int swim) {
         swimAnimals(this.getTypeAnimals(), swim, MAX_SWIM);
     }

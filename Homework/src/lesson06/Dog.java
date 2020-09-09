@@ -37,23 +37,23 @@ public class Dog extends Animals {
         System.out.println("Собака по кличке \"" + name + "\" сказала \"Гав-Гав\"!");
     }
 
-    //метод бега собаки
-    @Override
-    public void run(int run) {
-        runAnimals(this.getTypeAnimals(), run, MAX_RUN);
-    }
-
-    //метод прыжков собаки
-    @Override
-    public void jump(int jump) {
-        jumpAnimals(this.getTypeAnimals(), jump, MAX_JUMP);
-    }
-
-    //метод плавания собаки
-    @Override
-    public void swim(int swim) {
-        swimAnimals(this.getTypeAnimals(), swim, MAX_SWIM);
-    }
+//    //метод бега собаки
+//
+//    public void run(int run) {
+//        runAnimals(this.getTypeAnimals(), run, MAX_RUN);
+//    }
+//
+//    //метод прыжков собаки
+//
+//    public void jump(int jump) {
+//        jumpAnimals(this.getTypeAnimals(), jump, MAX_JUMP);
+//    }
+//
+//    //метод плавания собаки
+//
+//    public void swim(int swim) {
+//        swimAnimals(this.getTypeAnimals(), swim, MAX_SWIM);
+//    }
 
 
 }

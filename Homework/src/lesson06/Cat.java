@@ -37,21 +37,21 @@ public class Cat extends Animals {
         System.out.println("Кошка по кличке \"" + name + "\" сказала \"Мяуу\"!");
     }
 
-    //метод бега кошки
-
-    public void run(double run) {
-        runAnimals(this.getTypeAnimals(), run, MAX_RUN);
-    }
-
-    //метод прыжков кошки
-
-    public void jump(double jump) {
-        jumpAnimals(this.getTypeAnimals(), jump, MAX_JUMP);
-    }
-
-    //метод плавания кошки
-
-    public void swim(double swim) {
-        System.out.println("Кошки не умеют плавать.");
-    }
+//    //метод бега кошки
+//
+//    public void run(double run) {
+//        runAnimals(this.getTypeAnimals(), run, MAX_RUN);
+//    }
+//
+//    //метод прыжков кошки
+//
+//    public void jump(double jump) {
+//        jumpAnimals(this.getTypeAnimals(), jump, MAX_JUMP);
+//    }
+//
+//    //метод плавания кошки
+//@Override
+//    public void swim(double swim) {
+//        System.out.println("Кошки не умеют плавать.");
+//    }
 }
