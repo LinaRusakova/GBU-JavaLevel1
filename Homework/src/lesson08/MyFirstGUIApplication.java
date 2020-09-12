@@ -121,7 +121,7 @@ public class MyFirstGUIApplication extends JFrame {
         try {
             // String преобразуем в int
             enterNumber = Integer.parseInt(text.trim());
-            if (enterNumber > 4 && enterNumber <= 16)
+            if (enterNumber >= 4 && enterNumber <= 16)
                 return randomString(enterNumber);
             else return "Вы ввели число за пределами диапазона от 4 до 16!";
 
