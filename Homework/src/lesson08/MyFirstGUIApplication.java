@@ -146,9 +146,21 @@ public class MyFirstGUIApplication extends JFrame {
         }
         return result;
     }
+
 }
 
 
+class MainClassGUI {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new MyFirstGUIApplication();
+            }
+        });
+    }
+
+}
 
 
 
